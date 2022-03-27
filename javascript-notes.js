@@ -1,6 +1,3 @@
-// usages of filter method
-const newArray = ["1", 7, 9, 2, 3.4];
-
 // hexa value and octal value 
 let hex = 0xff;
 let oct = 0367;
