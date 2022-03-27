@@ -227,3 +227,40 @@ console.log("user details ", JSON.parse(sessionStorage.getItem("userDetails")));
 // usages of cookies
 document.cookie = "username=minhaz; expires=Thu, 01 Jan 2070 00:00:00 GMT";
 console.log("username is: ", (document.cookie));
+
+// get the max value of an array with Math.max.apply(null, 1,2,3) also it's equivalent to Math.max(1,2,3)
+let ranArr = [3, 03, 3, 5, 12, 67];
+function getMaxValue(arr) {
+	return Math.max.apply(null, arr);
+}
+
+console.log(getMaxValue(ranArr));
+
+// every elements is odd so it will return true
+let dArr = [3, 9, 7, 3, 1, 5];
+
+console.log(
+	dArr.every(function (value) {
+		return value % 2 === 1;
+	})
+);
+
+// simple recursive function example 
+function demo(n) {
+	if (n > 0) {
+		console.log(`Iteration is irritating...`);
+		demo(n - 1);
+	} else return 0;
+}
+demo(10);
+
+// currying function example
+function currying(num1) {
+	return function (num2) {
+		return function (num3) {
+			return num1 + num2 + num3;
+		};
+	};
+}
+
+console.log(currying(12)(4)(31));
