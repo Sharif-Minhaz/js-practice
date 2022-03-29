@@ -264,3 +264,17 @@ function currying(num1) {
 }
 
 console.log(currying(12)(4)(31));
+
+// Enums in javascript with the object freeze method
+const GAME_STATES = Object.freeze({
+	NOT_STARTED: "Not started",
+	PLAYING: "Playing",
+	FINISHED: "Finished",
+});
+
+let gameState = GAME_STATES.NOT_STARTED;
+// start the game
+GAME_STATES.PLAYING = "Nothing";
+gameState = GAME_STATES.PLAYING;
+
+console.log(gameState);
