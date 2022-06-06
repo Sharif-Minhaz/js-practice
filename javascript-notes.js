@@ -162,7 +162,7 @@ let filteredArr = mainArr.filter(function (value) {
 });
 console.log(filteredArr);
 
-// find the summantion of all elements in an arry;
+// find the summation of all elements in an array;
 let arr0 = [3, 5, -1, 6.7, 0, -9, -2];
 let sumElement = arr0.reduce((prev, curr) => {
 	return prev + curr;
@@ -278,3 +278,20 @@ GAME_STATES.PLAYING = "Nothing";
 gameState = GAME_STATES.PLAYING;
 
 console.log(gameState);
+
+// remove duplicated value from an Array
+let chars = ["A", "B", "A", "C", "B"];
+let uniqueChars = [...new Set(chars)];
+
+console.log(uniqueChars);
+
+// sort with mix case
+let mixedCaseAnimals = ["Cat", "dog", "Elephant", "bee", "ant"];
+
+mixedCaseAnimals.sort(function (a, b) {
+	let x = a.toUpperCase(),
+		y = b.toUpperCase();
+	return x == y ? 0 : x > y ? 1 : -1;
+});
+
+console.log(mixedCaseAnimals);
