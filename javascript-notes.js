@@ -295,3 +295,23 @@ mixedCaseAnimals.sort(function (a, b) {
 });
 
 console.log(mixedCaseAnimals);
+
+// find the symbol type name
+const character = "a";
+
+character <= "z" && character >= "a"
+	? console.log("Lowercase Character")
+	: character <= "Z" && character >= "A"
+	? console.log("Uppercase Character")
+	: character <= 9 && character >= 0
+	? console.log("Numerical Digit")
+	: console.log("Special character");
+
+// compare 2 object
+const k1 = { fruit: "🥝" };
+const k2 = { fruit: "🥝" };
+
+// Using JavaScript
+JSON.stringify(k1) === JSON.stringify(k2); // true
+// Using Lodash
+_.isEqual(k1, k2); // true
