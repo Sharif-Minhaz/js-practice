@@ -1,3 +1,13 @@
-*
-!.gitignore
-!javascript-notes.js
+css
+images/
+node_modules/
+pages/
+sass/
+scripts/
+styles/
+test/
+app.js
+obstacle.js
+problem.htm
+tempCodeRunnerFile.js
+problem.js

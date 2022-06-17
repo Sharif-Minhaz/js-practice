@@ -1,4 +1,4 @@
-// hexa value and octal value 
+// hexa value and octal value
 let hex = 0xff;
 let oct = 0367;
 console.log(hex, oct); // ans: 255 247
@@ -50,7 +50,7 @@ pay.then(
 ).catch((err) => {
 	console.log(err);
 });
-// if you reject the promise with new Error then you will no longer need to add a second param as callback for 
+// if you reject the promise with new Error then you will no longer need to add a second param as callback for
 // reject in then
 const hasMeeting = false;
 const meeting = new Promise((resolve, reject) => {
@@ -145,6 +145,7 @@ let ne = arrMethod.reduce((prev, curr) => {
 	return Math.max(prev, curr);
 });
 console.log(ne);
+
 // find and findIndex
 let newArr = arrMethod.find(function (value) {
 	return value === 89;
@@ -158,7 +159,7 @@ console.log(newArr2);
 let mainArr = [3, 5, 6.7, 0, "rahim", true];
 
 let filteredArr = mainArr.filter(function (value) {
-	return typeof value === "number" && (value % parseInt(value) === 0);
+	return typeof value === "number" && value % parseInt(value) === 0;
 });
 console.log(filteredArr);
 
@@ -226,7 +227,7 @@ console.log("user details ", JSON.parse(sessionStorage.getItem("userDetails")));
 
 // usages of cookies
 document.cookie = "username=minhaz; expires=Thu, 01 Jan 2070 00:00:00 GMT";
-console.log("username is: ", (document.cookie));
+console.log("username is: ", document.cookie);
 
 // get the max value of an array with Math.max.apply(null, 1,2,3) also it's equivalent to Math.max(1,2,3)
 let ranArr = [3, 03, 3, 5, 12, 67];
@@ -245,7 +246,7 @@ console.log(
 	})
 );
 
-// simple recursive function example 
+// simple recursive function example
 function demo(n) {
 	if (n > 0) {
 		console.log(`Iteration is irritating...`);
@@ -296,3 +297,37 @@ mixedCaseAnimals.sort(function (a, b) {
 
 console.log(mixedCaseAnimals);
 
+//find LCF, HCF
+// Formula => (LCF * HCF) = (num1 * num2);
+let num1 = 12,
+	num2 = 16;
+
+let min = num1 > num2 ? num1 : num2;
+
+while (true) {
+	if (min % num1 == 0 && min % num2 == 0) {
+		console.log(`The LCM of ${num1} and ${num2} is ${min}`);
+		break;
+	}
+	min++;
+}
+
+// find the symbol type name
+const character = "a";
+
+character <= "z" && character >= "a"
+	? console.log("Lowercase Character")
+	: character <= "Z" && character >= "A"
+	? console.log("Uppercase Character")
+	: character <= 9 && character >= 0
+	? console.log("Numerical Digit")
+	: console.log("Special character");
+
+// compare 2 object
+const k1 = { fruit: "🥝" };
+const k2 = { fruit: "🥝" };
+
+// Using JavaScript
+JSON.stringify(k1) === JSON.stringify(k2); // true
+// Using Lodash
+_.isEqual(k1, k2); // true
