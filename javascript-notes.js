@@ -3,9 +3,10 @@ let hex = 0xff;
 let oct = 0367;
 console.log(hex, oct); // ans: 255 247
 
+// lexiograph ordering system for here all small letter is getter than capital word
 let str = "a";
 let str2 = "Z";
-console.log(str > str2); // lexiograph ordering system for here all small letter is getter than capital word
+console.log(str > str2);
 
 // resizing an array
 const myArray = [2, 3, 4, 7, 8];
@@ -15,7 +16,7 @@ console.log({ myArray });
 
 // find the max Element of an array
 let maxElement = [3, 5, -1, 6.7, 0, -9, -2];
-console.log(Math.max.apply(null, maxElement));
+console.log(Math.max.apply(null, maxElement)); // 6.7
 
 // table
 class Person {
@@ -32,8 +33,8 @@ family.daughter = new Person("Emily", "Smith");
 console.table(family);
 
 // removing decimal partial
-console.log(19.6 | 0);
-console.log(919.6 | 0);
+console.log(19.6 | 0); // 19
+console.log(919.6 | 0); // 919
 
 // promise, then and catch
 let billPaid = true;
@@ -88,7 +89,7 @@ console.log(dogsNames);
 
 console.assert(typeof useless == "undefined", "Error loading user.");
 
-// upload images
+// upload images with new FileReader()
 const profilePicCng = document.getElementById("profilePicsFile");
 profilePicCng.addEventListener("change", function () {
 	let file = document.getElementById("profilePicsFile").files[0];
@@ -150,10 +151,12 @@ console.log(ne);
 let newArr = arrMethod.find(function (value) {
 	return value === 89;
 });
+
 let newArr2 = arrMethod.findIndex(function (value) {
 	return value === 89;
 });
-console.log(newArr2);
+
+console.log(newArr2); //
 
 // filter only the integer number
 let mainArr = [3, 5, 6.7, 0, "rahim", true];
@@ -168,6 +171,7 @@ let arr0 = [3, 5, -1, 6.7, 0, -9, -2];
 let sumElement = arr0.reduce((prev, curr) => {
 	return prev + curr;
 }, 0);
+
 console.log(sumElement);
 
 // sorting an object by the age property
@@ -235,7 +239,7 @@ function getMaxValue(arr) {
 	return Math.max.apply(null, arr);
 }
 
-console.log(getMaxValue(ranArr));
+console.log(getMaxValue(ranArr)); // 67
 
 // every elements is odd so it will return true
 let dArr = [3, 9, 7, 3, 1, 5];
@@ -244,7 +248,7 @@ console.log(
 	dArr.every(function (value) {
 		return value % 2 === 1;
 	})
-);
+); // true
 
 // simple recursive function example
 function demo(n) {
@@ -253,6 +257,7 @@ function demo(n) {
 		demo(n - 1);
 	} else return 0;
 }
+
 demo(10);
 
 // currying function example
@@ -331,3 +336,7 @@ const k2 = { fruit: "🥝" };
 JSON.stringify(k1) === JSON.stringify(k2); // true
 // Using Lodash
 _.isEqual(k1, k2); // true
+
+// Converting a String into an Array
+const userStr = "Hello";
+console.log([...userStr]);
