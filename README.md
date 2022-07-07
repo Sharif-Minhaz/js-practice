@@ -438,9 +438,10 @@ const userStr = "Hello";
 console.log([...userStr]); // [ 'H', 'e', 'l', 'l', 'o' ]
 ```
 
-#### 33.
+#### 33. Add option in the select dynamically
 
 ```js
+let newOption = new Option('Option Text','Option Value');
 ```
 
 #### 34.
