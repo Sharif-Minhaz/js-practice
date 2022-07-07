@@ -441,7 +441,10 @@ console.log([...userStr]); // [ 'H', 'e', 'l', 'l', 'o' ]
 #### 33. Add option in the select dynamically
 
 ```js
+const selectMenu = document.querySelector("select");
+
 let newOption = new Option('Option Text','Option Value');
+selectMenu.options.add(newOption);
 ```
 
 #### 34.
