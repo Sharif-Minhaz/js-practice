@@ -447,9 +447,12 @@ let newOption = new Option('Option Text','Option Value');
 selectMenu.options.add(newOption);
 ```
 
-#### 34.
+#### 34. Replace substring with replace function
 
 ```js
+let input = "Hello stupid world!";
+
+console.log(input.replace("stupid", "beautiful")); // Hello beautiful world!
 ```
 
 #### 35.
