@@ -490,9 +490,23 @@ console.log(iterator.next().value); // [ 1, 'Orange' ]
 console.log(iterator.next().value); // [ 2, 'Apple' ]
 ```
 
-#### 38.
+#### 38. Borrow a method from another object with bind()
 
 ```js
+const king = {
+	firstName: "Robb",
+	lastName: "Stark",
+	fullName: function () {
+		return this.firstName + " " + this.lastName;
+	},
+};
+
+const commander = {
+	firstName: "John",
+	lastName: "Snow",
+};
+
+console.log(king.fullName.bind(commander)()); // John Snow
 ```
 
 #### 39.
