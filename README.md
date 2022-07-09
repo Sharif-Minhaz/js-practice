@@ -450,24 +450,44 @@ selectMenu.options.add(newOption);
 #### 34. Replace substring with replace function
 
 ```js
-let input = "Hello stupid world!";
+let input = "Hello stupid world! STUPID people 😐";
 
-console.log(input.replace("stupid", "beautiful")); // Hello beautiful world!
+console.log(input.replace(/stupid/ig, "beautiful")); // Hello beautiful world! beautiful people 😐
 ```
 
-#### 35.
+#### 35. Add string before any string with padStart
 
 ```js
+let input = "10,85,00";
+let input2 = "0";
+
+// first param will take the future full length of the string
+console.log(input.padStart(input.length + 1, "$")); // $100
+console.log(input2.padStart(4, "1")); // 1110
 ```
 
-#### 36.
+#### 36. Delete specific element but keep the empty hole
 
 ```js
+const test = [3, 4, 5, 6, 7, 8, 9, 10, 11];
+delete test[0];
+
+console.log(test.length); // 9
+console.log(test); // [ <1 empty item>, 4, 5, 6, 7, 8, 9, 10, 11 ]
+console.log(test.length) //9
 ```
 
-#### 37.
+#### 37. Iterate and preserve the iteration state with entries()
 
 ```js
+const test = ["Banana", "Orange", "Apple", "Mango"];
+
+const iterator = test.entries();
+
+// every same method call will increase the current state
+console.log(iterator.next().value); // [ 0, 'Banana' ]
+console.log(iterator.next().value); // [ 1, 'Orange' ]
+console.log(iterator.next().value); // [ 2, 'Apple' ]
 ```
 
 #### 38.
