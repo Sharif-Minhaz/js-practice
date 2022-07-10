@@ -1,4 +1,4 @@
-# Javascripts Important Notes
+# Javascript's Important Notes
 #### 1. Getting hexa value and octal value 
 
 ```js
@@ -506,21 +506,402 @@ const commander = {
 	lastName: "Snow",
 };
 
+// need the function invoke
 console.log(king.fullName.bind(commander)()); // John Snow
 ```
 
-#### 39.
+#### 39. Borrow a method from another object with call(...args)
 
 ```js
+const person = {
+	fullName: function (city, country) {
+		console.log(this.firstName + " " + this.lastName + ", " + city + ", " + country);
+	},
+};
+
+const person1 = {
+	firstName: "John",
+	lastName: "Doe",
+};
+
+// no need for function invoke
+person.fullName.call(person1, "Oslo", "Norway");
+
 ```
 
-#### 40.
+#### 40. Borrow a method from another object with call([...args])
 
 ```js
+const person = {
+  fullName: function(city, country) {
+    return this.firstName + " " + this.lastName + "," + city + "," + country;
+  }
+}
+
+const person1 = {
+  firstName:"John",
+  lastName: "Doe"
+}
+
+// work almost same as call but take arguments as array
+person.fullName.apply(person1, ["Oslo", "Norway"]);
 ```
 
-#### 41.
+> #### 41. Difference between bind(), call() and apply()
+
+- The call() and apply() methods set this to a function and call the function.
+
+#### 42.
 
 ```js
+
+```
+
+#### 43.
+
+```js
+
+```
+
+#### 44.
+
+```js
+
+```
+
+#### 45.
+
+```js
+
+```
+
+#### 46.
+
+```js
+
+```
+
+#### 47.
+
+```js
+
+```
+
+#### 48.
+
+```js
+
+```
+
+#### 49.
+
+```js
+
+```
+
+#### 50.
+
+```js
+
+```
+
+#### 51.
+
+```js
+
+```
+
+#### 52.
+
+```js
+
+```
+
+#### 53.
+
+```js
+
+```
+
+#### 54.
+
+```js
+
+```
+
+#### 55.
+
+```js
+
+```
+
+#### 56.
+
+```js
+
+```
+
+#### 57.
+
+```js
+
+```
+
+#### 58.
+
+```js
+
+```
+
+#### 59.
+
+```js
+
+```
+
+#### 60.
+
+```js
+
+```
+
+#### 61.
+
+```js
+
+```
+
+#### 62.
+
+```js
+
+```
+
+#### 63.
+
+```js
+
+```
+
+#### 64.
+
+```js
+
+```
+
+#### 65.
+
+```js
+
+```
+
+#### 66.
+
+```js
+
+```
+
+#### 67.
+
+```js
+
+```
+
+#### 68.
+
+```js
+
+```
+
+#### 69.
+
+```js
+
+```
+
+#### 70.
+
+```js
+
+```
+
+#### 71.
+
+```js
+
+```
+
+#### 72.
+
+```js
+
+```
+
+#### 73.
+
+```js
+
+```
+
+#### 74.
+
+```js
+
+```
+
+#### 75.
+
+```js
+
+```
+
+#### 76.
+
+```js
+
+```
+
+#### 77.
+
+```js
+
+```
+
+#### 78.
+
+```js
+
+```
+
+#### 79.
+
+```js
+
+```
+
+#### 80.
+
+```js
+
+```
+
+#### 81.
+
+```js
+
+```
+
+#### 82.
+
+```js
+
+```
+
+#### 83.
+
+```js
+
+```
+
+#### 84.
+
+```js
+
+```
+
+#### 85.
+
+```js
+
+```
+
+#### 86.
+
+```js
+
+```
+
+#### 87.
+
+```js
+
+```
+
+#### 88.
+
+```js
+
+```
+
+#### 89.
+
+```js
+
+```
+
+#### 90.
+
+```js
+
+```
+
+#### 91.
+
+```js
+
+```
+
+#### 92.
+
+```js
+
+```
+
+#### 93.
+
+```js
+
+```
+
+#### 94.
+
+```js
+
+```
+
+#### 95.
+
+```js
+
+```
+
+#### 96.
+
+```js
+
+```
+
+#### 97.
+
+```js
+
+```
+
+#### 98.
+
+```js
+
+```
+
+#### 99.
+
+```js
+
+```
+
+#### 100.
+
+```js
+
 ```
 
