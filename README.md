@@ -509,6 +509,15 @@ const commander = {
 // need the function invoke
 console.log(king.fullName.bind(commander)()); // John Snow
 ```
+```js
+function test(arg){
+ console.log(this.number, arg);
+}
+
+let bindedFn = test.bind({number: 99}, "argument");
+
+bindedFn(); // 99, "argument"
+```
 
 #### 39. Borrow a method from another object with call(...args)
 
@@ -527,6 +536,13 @@ const person1 = {
 // no need for function invoke
 person.fullName.call(person1, "Oslo", "Norway");
 
+```
+```js
+function test(arg1, arg2){
+  console.log(this.num, arg1, arg2); // 100, 10, 20
+}
+
+test.call({num: 100}, 10, 20);
 ```
 
 #### 40. Borrow a method from another object with call([...args])
@@ -547,7 +563,18 @@ const person1 = {
 person.fullName.apply(person1, ["Oslo", "Norway"]);
 ```
 
-> #### 41. Difference between bind(), call() and apply()
+#### 41. Use of apply() method
+
+```js
+function test(...arguments){
+  console.log(this.num, arguments);//100, [1,2,3]
+}
+
+test.apply({num: 100}, [1,2,3]); 
+```
+
+
+#### 42. Difference between bind(), call() and apply()
 
 - The `call()` and `apply()` methods set this to a function and call the function.
 - The `bind()` method will only set this to a function. We will need to separately invoke the function.
@@ -559,12 +586,6 @@ person.fullName.apply(person1, ["Oslo", "Norway"]);
 2. `apply`: binds the this value, invokes the function, and allows you to pass arguments as an array.
 
 3. `bind`: binds the this value, returns a new function, and allows you to pass in a list of arguments.
-
-#### 42.
-
-```js
-
-```
 
 #### 43.
 
