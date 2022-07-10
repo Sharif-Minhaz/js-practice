@@ -549,7 +549,16 @@ person.fullName.apply(person1, ["Oslo", "Norway"]);
 
 > #### 41. Difference between bind(), call() and apply()
 
-- The call() and apply() methods set this to a function and call the function.
+- The `call()` and `apply()` methods set this to a function and call the function.
+- The `bind()` method will only set this to a function. We will need to separately invoke the function.
+
+---
+
+1. `call`: binds the this value, invokes the function, and allows you to pass a list of arguments.
+
+2. `apply`: binds the this value, invokes the function, and allows you to pass arguments as an array.
+
+3. `bind`: binds the this value, returns a new function, and allows you to pass in a list of arguments.
 
 #### 42.
 
