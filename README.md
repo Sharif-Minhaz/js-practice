@@ -482,7 +482,7 @@ console.log(test.length) //9
 ```js
 const test = ["Banana", "Orange", "Apple", "Mango"];
 
-const iterator = test.entries();
+const iterator = test.entries(); // built in generator function
 
 // every same method call will increase the current state
 console.log(iterator.next().value); // [ 0, 'Banana' ]
@@ -598,22 +598,41 @@ const array3 = array1.filter(function(obj) {
 });
 ```
 
-#### 44.
+#### 44. Generator function in javascript
 
 ```js
+function* generator(i) {
+  yield i;
+  yield i + 10;
+}
+
+const gen = generator(10);
+
+console.log(gen.next().value);
+// expected output: 10
+
+console.log(gen.next().value);
+// expected output: 20
+```
+
+#### 45. Finding some important HTML Objects
+
+```js
+console.log(document.baseURI); // http://127.0.0.1:5500/problem.htm
+console.log(document.domain); // 127.0.0.1
+console.log(document.lastModified); // 07/12/2022 20:58:33
+console.log(document.readyState); // 'loading' | 'interactive' | 'complete'
 
 ```
 
-#### 45.
+#### 46. Find if the page has script file
 
 ```js
+let scripts = document.scripts;
 
-```
-
-#### 46.
-
-```js
-
+if (scripts.length) {
+  alert('This page has scripts!');
+}
 ```
 
 #### 47.
