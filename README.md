@@ -587,10 +587,15 @@ test.apply({num: 100}, [1,2,3]);
 
 3. `bind`: binds the this value, returns a new function, and allows you to pass in a list of arguments.
 
-#### 43.
+#### 43. Get unique values from two arrays
 
 ```js
+let array1 = ["a", "b", "c", "d"];
+let array2 = ["a", "b", "c"];
 
+const array3 = array1.filter(function(obj) {
+	return array2.indexOf(obj) == -1; // ['d']
+});
 ```
 
 #### 44.
