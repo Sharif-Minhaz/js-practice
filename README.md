@@ -635,28 +635,59 @@ if (scripts.length) {
 }
 ```
 
-#### 47.
+#### 47. Check if the cookies are enable or not
 
 ```js
+if (navigator.cookieEnabled == true) {
+    console.log("Cookies are enabled.");
+} else {
+    console.log("Cookies are not enabled.");
+}
 
 ```
 
-#### 48.
+#### 48. Execute a JavaScript when the loading of a video is aborted
+
+```html
+<video onabort="myFunction()">
+```
+
+#### 49. Copies, cut and paste event
 
 ```js
+const body = document.body;
+
+body.oncopy = function () {
+	alert("Copied");
+};
+
+body.onpaste = function () {
+	alert("Paste");
+};
+
+body.oncut = function () {
+	alert("Cut");
+};
 
 ```
 
-#### 49.
+#### 50. Handle client side form validation
 
-```js
-
+```html
+<form action="/">
+	<input type="text" oninvalid="handleValidation();" required />
+	<button type="submit">submit</button>
+	<p id="invalid-msg"></p>
+</form>
 ```
 
-#### 50.
-
 ```js
+const invalidMsg = document.getElementById("invalid-msg");
+invalidMsg.style.color = "red";
 
+function handleValidation() {
+    invalidMsg.innerText = "Input is required"
+}
 ```
 
 #### 51.
