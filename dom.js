@@ -1,13 +1,8 @@
-const selectHeader = document.getElementsByTagName("h1");
+const container = document.getElementsByClassName("container")[0];
+const h1 = document.getElementsByTagName("h1")[0];
 
-selectHeader[0].onmouseenter = function () {
-	this.innerHTML = "Well done! now leave";
-};
+const h2 = document.createElement("h2");
+const text = document.createTextNode("Replaced text here...");
 
-selectHeader[0].onmouseleave = function () {
-	this.innerHTML = "Thank you";
-};
-
-function didit(event) {
-	alert(event.key);
-}
+h2.appendChild(text);
+container.replaceChild(h2, h1);

@@ -699,25 +699,41 @@ const longest = arr.sort((a, b) => b.length - a.length)[0];
 // (a.length - b.length) will return the smallest string
 
 console.log(longest); // Bangladesh
-
 ```
 
-#### 52.
+#### 52. Creating new HTML Elements - insertBefore()
 
 ```js
+const body = document.body;
 
+const p = document.createElement("p");
+const text = document.createTextNode("This is a demo text");
+p.appendChild(text);
+
+const h1 = document.getElementsByTagName("h1")[0];
+// which child you want to insert the new child before? in this case h1
+body.insertBefore(p, h1);
 ```
 
-#### 53.
+#### 53. Removing a child node
 
 ```js
-
+const parent = document.getElementById("div1");
+const child = document.getElementById("p1"); // child.remove()
+parent.removeChild(child);
 ```
 
-#### 54.
+#### 54. Replacing Html elements
 
 ```js
+const container = document.getElementsByClassName("container")[0];
+const h1 = document.getElementsByTagName("h1")[0];
 
+const h2 = document.createElement("h2");
+const text = document.createTextNode("Replaced text here...");
+
+h2.appendChild(text);
+container.replaceChild(h2, h1);
 ```
 
 #### 55.
