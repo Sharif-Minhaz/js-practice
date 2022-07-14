@@ -690,9 +690,15 @@ function handleValidation() {
 }
 ```
 
-#### 51.
+#### 51. Finding longest string in array
 
 ```js
+const arr = ["hell", "hello", "Bangladesh", "tea"];
+
+const longest = arr.sort((a, b) => b.length - a.length)[0]; 
+// (a.length - b.length) will return the smallest string
+
+console.log(longest); // Bangladesh
 
 ```
 
