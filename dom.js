@@ -1,8 +1,13 @@
 const container = document.getElementsByClassName("container")[0];
 const h1 = document.getElementsByTagName("h1")[0];
 
-const h2 = document.createElement("h2");
-const text = document.createTextNode("Replaced text here...");
+const para = document.createElement("p");
+const text1 = document.createTextNode(`Window width: ${window.innerWidth}`);
+const para2 = document.createElement("p");
+const text2 = document.createTextNode(`Window height: ${window.innerHeight}`);
 
-h2.appendChild(text);
-container.replaceChild(h2, h1);
+para.appendChild(text1);
+para2.appendChild(text2);
+
+container.insertBefore(para, h1);
+container.insertBefore(para2, h1);

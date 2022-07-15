@@ -736,22 +736,31 @@ h2.appendChild(text);
 container.replaceChild(h2, h1);
 ```
 
-#### 55.
+#### 55. Encode & Decode a base-64 encoded string
 
 ```js
-
+let text = "Hello World!";
+let encoded = window.btoa(text); // SGVsbG8gV29ybGQh
+let decoded = window.atob(encoded); // Hello World!
 ```
 
 #### 56.
 
 ```js
-
+const myWindow = window.open("", "", "width=200, height=100"); myWindow.blur(); 
+// The blur() method removes focus from a window. The blur() method makes a request to bring a window to the background. It may not work as you expect, due to different user settings.
+const myWindow = window.open("", "", "width=200, height=100"); myWindow.focus(); 
+// The focus() method sets focus to a window.
 ```
 
-#### 57.
+#### 57. Display a confirmation box, and output what the user clicked
 
 ```js
-
+if (confirm("Press a button!") == true) {
+	console.log("You pressed Ok!");
+} else {
+	console.log("You pressed Cancel!");
+}
 ```
 
 #### 58.
