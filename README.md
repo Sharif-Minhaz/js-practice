@@ -115,7 +115,7 @@ console.log(dogsNames);
 #### 9. Assertion in javascript
 
 ```js
-console.assert(typeof user == "", "Error loading user.");
+console.assert(typeof user == undefined, "Error loading user.");
 ```
 
 #### 10. Upload images with new FileReader()
@@ -744,7 +744,7 @@ let encoded = window.btoa(text); // SGVsbG8gV29ybGQh
 let decoded = window.atob(encoded); // Hello World!
 ```
 
-#### 56.
+#### 56. Create a new window with focus or blur
 
 ```js
 const myWindow = window.open("", "", "width=200, height=100"); myWindow.blur(); 
@@ -763,22 +763,36 @@ if (confirm("Press a button!") == true) {
 }
 ```
 
-#### 58.
+#### 58. Get execution time from a piece of code
 
 ```js
-
+console.time("loop"); // here, label = 'loop'
+for (let i = 0; i < 100000; i++) {
+	// do something...
+}
+console.timeEnd("loop"); // loop: 4.199ms
 ```
 
 #### 59.
 
 ```js
-
+console.log("Hello world!");
+console.group("test"); // .groupCollapsed() create a collapsed group instead
+console.log("Hello again, this time inside a group!");
+console.groupEnd("test");
+console.log("and we are back.");
 ```
 
-#### 60.
+#### 60. History browsing with history.go()
+
+```html
+<button onclick="history.go(-2)">Go Back 2 Pages</button>
+```
 
 ```js
-
+history.go(0) // reloads the page.
+history.go(-1) // is the same as history.back().
+history.go(1) // is the same as history.forward().
 ```
 
 #### 61.

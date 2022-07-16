@@ -1,1 +1,1 @@
-console.time()
+console.log(window.history[0])
