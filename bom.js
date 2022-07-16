@@ -1,3 +1,9 @@
-function myFunction() {
-	
-}
+console.group("screen");
+console.log(
+	screen.width,
+	screen.availWidth,
+	screen.availHeight,
+	screen.height,
+	screen.orientation,
+	screen.pixelDepth
+);

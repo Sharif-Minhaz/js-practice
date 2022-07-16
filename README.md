@@ -1,11 +1,13 @@
 # Javascript's Important Notes
-#### 1. Getting hexa value and octal value 
+
+#### 1. Getting hexa value and octal value
 
 ```js
 let hex = 0xff;
 let oct = 0367;
 console.log(hex, oct); // 255 247
 ```
+
 #### 2. Lexiograph ordering system for here all small letter is getter than capital word
 
 ```js
@@ -151,7 +153,6 @@ let user = {
 
 console.log(Object.values(user)); // [ 'Minhaz', 21, 'minhaz@gmail.com', '01232323232' ]
 console.log(Object.entries(user)); // return a 2d array [[ 'name', 'Minhaz' ],[ 'age', 21 ],[ 'email', 'minhaz@gmail.com' ],[ 'phone', '01232323232' ]]
-
 ```
 
 #### 12. Copy an object from another in immutable way
@@ -345,6 +346,7 @@ function demo(n) {
 
 demo(10);
 ```
+
 #### 26. Currying function example
 
 ```js
@@ -444,7 +446,7 @@ console.log([...userStr]); // [ 'H', 'e', 'l', 'l', 'o' ]
 ```js
 const selectMenu = document.querySelector("select");
 
-let newOption = new Option('Option Text','Option Value');
+let newOption = new Option("Option Text", "Option Value");
 selectMenu.options.add(newOption);
 ```
 
@@ -453,7 +455,7 @@ selectMenu.options.add(newOption);
 ```js
 let input = "Hello stupid world! STUPID people 😐";
 
-console.log(input.replace(/stupid/ig, "beautiful")); // Hello beautiful world! beautiful people 😐
+console.log(input.replace(/stupid/gi, "beautiful")); // Hello beautiful world! beautiful people 😐
 ```
 
 #### 35. Add string before any string with padStart
@@ -475,7 +477,7 @@ delete test[0];
 
 console.log(test.length); // 9
 console.log(test); // [ <1 empty item>, 4, 5, 6, 7, 8, 9, 10, 11 ]
-console.log(test.length) //9
+console.log(test.length); //9
 ```
 
 #### 37. Iterate and preserve the iteration state with entries()
@@ -510,12 +512,13 @@ const commander = {
 // need the function invoke
 console.log(king.fullName.bind(commander)()); // John Snow
 ```
+
 ```js
-function test(arg){
- console.log(this.number, arg);
+function test(arg) {
+	console.log(this.number, arg);
 }
 
-let bindedFn = test.bind({number: 99}, "argument");
+let bindedFn = test.bind({ number: 99 }, "argument");
 
 bindedFn(); // 99, "argument"
 ```
@@ -536,29 +539,29 @@ const person1 = {
 
 // no need for function invoke
 person.fullName.call(person1, "Oslo", "Norway");
-
 ```
+
 ```js
-function test(arg1, arg2){
-  console.log(this.num, arg1, arg2); // 100, 10, 20
+function test(arg1, arg2) {
+	console.log(this.num, arg1, arg2); // 100, 10, 20
 }
 
-test.call({num: 100}, 10, 20);
+test.call({ num: 100 }, 10, 20);
 ```
 
 #### 40. Borrow a method from another object with call([...args])
 
 ```js
 const person = {
-  fullName: function(city, country) {
-    return this.firstName + " " + this.lastName + "," + city + "," + country;
-  }
-}
+	fullName: function (city, country) {
+		return this.firstName + " " + this.lastName + "," + city + "," + country;
+	},
+};
 
 const person1 = {
-  firstName:"John",
-  lastName: "Doe"
-}
+	firstName: "John",
+	lastName: "Doe",
+};
 
 // work almost same as call but take arguments as array
 person.fullName.apply(person1, ["Oslo", "Norway"]);
@@ -567,18 +570,17 @@ person.fullName.apply(person1, ["Oslo", "Norway"]);
 #### 41. Use of apply() method
 
 ```js
-function test(...arguments){
-  console.log(this.num, arguments);//100, [1,2,3]
+function test(...arguments) {
+	console.log(this.num, arguments); //100, [1,2,3]
 }
 
-test.apply({num: 100}, [1,2,3]); 
+test.apply({ num: 100 }, [1, 2, 3]);
 ```
-
 
 #### 42. Difference between bind(), call() and apply()
 
-- The `call()` and `apply()` methods set this to a function and call the function.
-- The `bind()` method will only set this to a function. We will need to separately invoke the function.
+-   The `call()` and `apply()` methods set this to a function and call the function.
+-   The `bind()` method will only set this to a function. We will need to separately invoke the function.
 
 ---
 
@@ -594,7 +596,7 @@ test.apply({num: 100}, [1,2,3]);
 let array1 = ["a", "b", "c", "d"];
 let array2 = ["a", "b", "c"];
 
-const array3 = array1.filter(function(obj) {
+const array3 = array1.filter(function (obj) {
 	return array2.indexOf(obj) == -1; // ['d']
 });
 ```
@@ -603,8 +605,8 @@ const array3 = array1.filter(function(obj) {
 
 ```js
 function* generator(i) {
-  yield i;
-  yield i + 10;
+	yield i;
+	yield i + 10;
 }
 
 const gen = generator(10);
@@ -623,7 +625,6 @@ console.log(document.baseURI); // http://127.0.0.1:5500/problem.htm
 console.log(document.domain); // 127.0.0.1
 console.log(document.lastModified); // 07/12/2022 20:58:33
 console.log(document.readyState); // 'loading' | 'interactive' | 'complete'
-
 ```
 
 #### 46. Find if the page has script file
@@ -632,7 +633,7 @@ console.log(document.readyState); // 'loading' | 'interactive' | 'complete'
 let scripts = document.scripts;
 
 if (scripts.length) {
-  alert('This page has scripts!');
+	alert("This page has scripts!");
 }
 ```
 
@@ -640,17 +641,16 @@ if (scripts.length) {
 
 ```js
 if (navigator.cookieEnabled == true) {
-    console.log("Cookies are enabled.");
+	console.log("Cookies are enabled.");
 } else {
-    console.log("Cookies are not enabled.");
+	console.log("Cookies are not enabled.");
 }
-
 ```
 
 #### 48. Execute a JavaScript when the loading of a video is aborted
 
 ```html
-<video onabort="myFunction()">
+<video onabort="myFunction()"></video>
 ```
 
 #### 49. Copies, cut and paste event
@@ -669,7 +669,6 @@ body.onpaste = function () {
 body.oncut = function () {
 	alert("Cut");
 };
-
 ```
 
 #### 50. Handle client side form validation
@@ -687,7 +686,7 @@ const invalidMsg = document.getElementById("invalid-msg");
 invalidMsg.style.color = "red";
 
 function handleValidation() {
-    invalidMsg.innerText = "Input is required"
+	invalidMsg.innerText = "Input is required";
 }
 ```
 
@@ -696,7 +695,7 @@ function handleValidation() {
 ```js
 const arr = ["hell", "hello", "Bangladesh", "tea"];
 
-const longest = arr.sort((a, b) => b.length - a.length)[0]; 
+const longest = arr.sort((a, b) => b.length - a.length)[0];
 // (a.length - b.length) will return the smallest string
 
 console.log(longest); // Bangladesh
@@ -745,13 +744,16 @@ let encoded = window.btoa(text); // SGVsbG8gV29ybGQh
 let decoded = window.atob(encoded); // Hello World!
 ```
 
-#### 56. Create a new window with focus or blur
+#### 56. Create a new window with focus or blur and move it
 
 ```js
-const myWindow = window.open("", "", "width=200, height=100"); myWindow.blur(); 
+const myWindow = window.open("", "", "width=200, height=100");
+myWindow.blur();
 // The blur() method removes focus from a window. The blur() method makes a request to bring a window to the background. It may not work as you expect, due to different user settings.
-const myWindow = window.open("", "", "width=200, height=100"); myWindow.focus(); 
+const myWindow = window.open("", "", "width=200, height=100");
+myWindow.focus();
 // The focus() method sets focus to a window.
+myWindow.moveBy(250, 250); // move opened
 ```
 
 #### 57. Display a confirmation box, and output what the user clicked
@@ -774,7 +776,7 @@ for (let i = 0; i < 100000; i++) {
 console.timeEnd("loop"); // loop: 4.199ms
 ```
 
-#### 59.
+#### 59. Grouping of logs
 
 ```js
 console.log("Hello world!");
@@ -791,9 +793,9 @@ console.log("and we are back.");
 ```
 
 ```js
-history.go(0) // reloads the page.
-history.go(-1) // is the same as history.back().
-history.go(1) // is the same as history.forward().
+history.go(0); // reloads the page.
+history.go(-1); // is the same as history.back().
+history.go(1); // is the same as history.forward().
 ```
 
 #### 61. Get computed font size of the first letter in an element (using pseudo-element)
@@ -819,14 +821,15 @@ let size = cssObj.getPropertyValue("font-size");
 #### 63. Get the anchor part of the URL
 
 ```html
-<p><a id="anchor-part" href="/js/js_es6.asp#mark_array_from">Link</a><p>
+<p><a id="anchor-part" href="/js/js_es6.asp#mark_array_from">Link</a></p>
+<p>
+	<script>
+		let url = document.getElementById("anchor-part");
+		console.log(url.hash); // #mark_array_from
 
-<script>
-    let url = document.getElementById("anchor-part");
-    console.log(url.hash); // #mark_array_from
-
-	location.hash = "mark_array_find"; // set anchor part
-</script>
+		location.hash = "mark_array_find"; // set anchor part
+	</script>
+</p>
 ```
 
 #### 64. Location property
@@ -850,22 +853,58 @@ location.reload(); // Reload the current document:
 location.replace("https://www.facebook.com"); // replace the current document. location.history will be none
 ```
 
-#### 66.
+#### 66. The Window Navigator Object
 
 ```js
-
+navigator.language; // 'en-US'
+navigator.appName; // Netscape
+navigator.appVersion; // 5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36
+navigator.javaEnabled(); // true
+navigator.userAgent // Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36
 ```
 
-#### 67.
+#### 67. Get the latitude and longitude of the user's position with error handling
 
 ```js
+function getLocation() {
+	if (navigator.geolocation) {
+		navigator.geolocation.getCurrentPosition(showPosition, showError);
+	} else { 
+		alert("Geolocation is not supported by this browser.");
+	}
+}
 
+function showPosition(position) {
+    alert("Latitude: " + position.coords.latitude + " Longitude: " + position.coords.longitude);
+}
+
+function showError(error) {
+	switch(error.code) {
+		case error.PERMISSION_DENIED:
+			console.error("User denied the request for Geolocation.");
+		break;
+		case error.POSITION_UNAVAILABLE:
+			console.error("Location information is unavailable.");
+		break;
+		case error.TIMEOUT:
+			console.error("The request to get user location timed out.");
+		break;
+		case error.UNKNOWN_ERROR:
+			console.error("An unknown error occurred.")
+		break;
+	}
+}
 ```
 
-#### 68.
+#### 68. Screen information of user
 
 ```js
-
+screen.width // 1366
+screen.height // 768
+screen.availWidth // 1366
+screen.availHeight // 728
+screen.colorDepth // 24
+screen.pixelDepth // 24
 ```
 
 #### 69.
@@ -1059,4 +1098,3 @@ location.replace("https://www.facebook.com"); // replace the current document. l
 ```js
 
 ```
-
