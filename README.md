@@ -271,12 +271,13 @@ console.log(dsArr);
 #### 20. Usages of local storage
 
 ```js
-localStorage.setItem("user", "Sharif md minhaz");
-const value = localStorage.getItem("user");
-console.log(value);
+localStorage.setItem("user", "Sharif md minhaz"); // set value
+const value = localStorage.getItem("user"); // get value
+console.log(value); // Sharif md minhaz
 
-localStorage.setItem("user", "Sharif md minhazur rahman rabbi");
-localStorage.removeItem("username");
+localStorage.setItem("user", "Sharif md minhazur rahman rabbi"); // update value
+localStorage.removeItem("username"); // delete value pair
+localStorage.clear(); // remove all local storage
 ```
 
 #### 21. Usages of session storage
@@ -795,34 +796,58 @@ history.go(-1) // is the same as history.back().
 history.go(1) // is the same as history.forward().
 ```
 
-#### 61.
+#### 61. Get computed font size of the first letter in an element (using pseudo-element)
 
 ```js
-
+const element = document.getElementById("test");
+const cssObj = window.getComputedStyle(element, ":first-letter");
+// first get all applicable or available css property for this element
+let size = cssObj.getPropertyValue("font-size");
 ```
 
-#### 62.
+#### 62. How many windows are in the window (iframe)
 
-```js
+```html
+<iframe style="width:100%;height:100px"></iframe>
+<iframe style="width:100%;height:100px"></iframe>
 
+<script>
+	let length = window.length; // 2
+</script>
 ```
 
-#### 63.
+#### 63. Get the anchor part of the URL
 
-```js
+```html
+<p><a id="anchor-part" href="/js/js_es6.asp#mark_array_from">Link</a><p>
 
+<script>
+    let url = document.getElementById("anchor-part");
+    console.log(url.hash); // #mark_array_from
+
+	location.hash = "mark_array_find"; // set anchor part
+</script>
 ```
 
-#### 64.
+#### 64. Location property
 
 ```js
-
+let host = location.host; // current host and port
+let hostname = location.hostname; // current hostname
+location.href = "https://www.youtube.com"; // set the href
+location.href = "mailto:someone@example.com"; // Set the href value to point to an email address
+let origin = location.origin; // Get the protocol, hostname and port number of the URL
+let path = location.pathname; // Get pathname of current url
+let port = location.port; // Get the port number of the current URL:
+let protocol = location.protocol; // Return the protocol of the current URL
+let query = location.search; // Return the query-string part of a URL
 ```
 
-#### 65.
+#### 65. Location function
 
 ```js
-
+location.reload(); // Reload the current document:
+location.replace("https://www.facebook.com"); // replace the current document. location.history will be none
 ```
 
 #### 66.

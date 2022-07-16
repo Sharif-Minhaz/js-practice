@@ -1,1 +1,3 @@
-console.log(window.history[0])
+function myFunction() {
+	
+}
