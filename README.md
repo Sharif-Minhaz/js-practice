@@ -310,7 +310,7 @@ document.cookie = "username=minhaz; expires=Thu, 01 Jan 2070 00:00:00 GMT";
 console.log("username is: ", document.cookie);
 ```
 
-#### 23. Get the max value of an array with Math.max.apply(null, 1,2,3) also it's equivalent to Math.max(1,2,3)
+#### 23. Get the max value of an array with Math.max.apply(null, [1,2,3]) also it's equivalent to Math.max(1,2,3)
 
 ```js
 let ranArr = [3, 03, 3, 5, 12, 67];
@@ -473,9 +473,9 @@ console.log(input2.padStart(4, "1")); // 1110
 
 ```js
 const test = [3, 4, 5, 6, 7, 8, 9, 10, 11];
-delete test[0];
 
 console.log(test.length); // 9
+delete test[0];
 console.log(test); // [ <1 empty item>, 4, 5, 6, 7, 8, 9, 10, 11 ]
 console.log(test.length); //9
 ```
@@ -837,8 +837,8 @@ let size = cssObj.getPropertyValue("font-size");
 ```js
 let host = location.host; // current host and port
 let hostname = location.hostname; // current hostname
-location.href = "https://www.youtube.com"; // set the href
-location.href = "mailto:someone@example.com"; // Set the href value to point to an email address
+let href = location.href = "https://www.youtube.com"; // set the href
+let href2 = location.href = "mailto:someone@example.com"; // Set the href value to point to an email address
 let origin = location.origin; // Get the protocol, hostname and port number of the URL
 let path = location.pathname; // Get pathname of current url
 let port = location.port; // Get the port number of the current URL:
@@ -851,16 +851,23 @@ let query = location.search; // Return the query-string part of a URL
 ```js
 location.reload(); // Reload the current document:
 location.replace("https://www.facebook.com"); // replace the current document. location.history will be none
+location.assign("https://www.youtube.com"); // work same as location.href
 ```
 
 #### 66. The Window Navigator Object
 
 ```js
 navigator.language; // 'en-US'
+navigator.languages // ['en-US', 'en', 'bn']
 navigator.appName; // Netscape
 navigator.appVersion; // 5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36
 navigator.javaEnabled(); // true
 navigator.userAgent // Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36
+navigator.connection // NetworkInformation {onchange: null, effectiveType: '3g', rtt: 350, downlink: 1.45, saveData: false}
+navigator.hid // Returns an HID object providing methods for connecting to HID devices, listing attached HID devices, and event handlers for connected HID devices.
+navigator.onLine // true or false based on the connection
+navigator.pdfViewerEnabled // return true if browser pdf viewer is enable
+
 ```
 
 #### 67. Get the latitude and longitude of the user's position with error handling
@@ -907,16 +914,39 @@ screen.colorDepth // 24
 screen.pixelDepth // 24
 ```
 
-#### 69.
-
-```js
-
+#### 69. Copy text from a input box
+```html
+<input type="text" name="" id="copyBox">
+<input type="submit" value="Submit" onclick="copy();">
 ```
 
-#### 70.
+```js
+const copyBox = document.getElementById("copyBox");
+
+function copy() {  
+	copyBox.select(); 
+	copyBox.setSelectionRange(0, 99999); /* For mobile devices */
+	
+	navigator.clipboard.writeText(copyBox.value);
+	console.log("Text copied");
+}
+```
+
+#### 70. Use-case of generator function
 
 ```js
+function* generateNumber() {
+	let number = 1;
+	while (true) {
+		yield number;
+		number++;
+	}
+}
 
+const getNumObj = generateNumber(); // create instance of generator function
+
+console.log(getNumObj.next().value); // 1
+console.log(getNumObj.next().value); // 2
 ```
 
 #### 71.
