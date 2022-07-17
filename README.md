@@ -914,7 +914,7 @@ screen.colorDepth // 24
 screen.pixelDepth // 24
 ```
 
-#### 69. Copy text from a input box
+#### 69. Copy text from an input box
 ```html
 <input type="text" name="" id="copyBox">
 <input type="submit" value="Submit" onclick="copy();">
