@@ -955,16 +955,17 @@ console.log("%cHello, %cWassup dude?", "color: purple", "color: green");
 >Output: 
 ><p><img src='./assets/images/style-console.png' /></p>
 
-#### 72. null vs undefined in javascript
+#### 72. null vs undefined vs "" vs 0 in javascript
 
 ```js
 null == undefined // true, because they both are falsy value. 
 null === undefined // false
+"" == 0 // true
 typeof undefined; // undefined
 typeof null; // object
 ```
 
-#### 73. Differences between || and ?? in js
+#### 73. Differences between || and ?? (Nullish coalescing) in js
 
 ```js
 function getUnderstand(input) {
@@ -981,10 +982,13 @@ console.log(getUnderstand(0)); // 0
 | null  | "default"  | "default"  |
 | undefined	|"default"	|	"default"|
 
-#### 74.
+#### 74. Optional chaining in javascript
 
 ```js
-
+console.log(Math.test.test2) // will break the code because test is not defined
+console.log(Math.test?.test2) // will not break the code
+console.log(Number.random?.()) // function checking
+console.log(arr?.[0]) // array checking
 ```
 
 #### 75.
