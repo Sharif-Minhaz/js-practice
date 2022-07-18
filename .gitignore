@@ -1,5 +1,5 @@
 css
-images/
+/images
 node_modules/
 pages/
 sass/
