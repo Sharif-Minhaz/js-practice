@@ -822,14 +822,13 @@ let size = cssObj.getPropertyValue("font-size");
 
 ```html
 <p><a id="anchor-part" href="/js/js_es6.asp#mark_array_from">Link</a></p>
-<p>
-	<script>
-		let url = document.getElementById("anchor-part");
-		console.log(url.hash); // #mark_array_from
 
-		location.hash = "mark_array_find"; // set anchor part
-	</script>
-</p>
+<script>
+	let url = document.getElementById("anchor-part");
+	console.log(url.hash); // #mark_array_from
+
+	location.hash = "mark_array_find"; // set anchor part
+</script>
 ```
 
 #### 64. Location property
@@ -953,19 +952,34 @@ console.log(getNumObj.next().value); // 2
 ```js
 console.log("%cHello, %cWassup dude?", "color: purple", "color: green");
 ```
-<p><img src='./assets/images/style-console.png' /></p>
+>Output: 
+><p><img src='./assets/images/style-console.png' /></p>
 
-#### 72.
-
-```js
-
-```
-
-#### 73.
+#### 72. null vs undefined in javascript
 
 ```js
-
+null == undefined // true, because they both are falsy value. 
+null === undefined // false
+typeof undefined; // undefined
+typeof null; // object
 ```
+
+#### 73. Differences between || and ?? in js
+
+```js
+function getUnderstand(input) {
+	let test = input ?? "default";
+	return test;
+}
+
+console.log(getUnderstand(0)); // 0
+```
+| Input  |test ?? "default"| test \|\| default   |
+| :---: | :---: | :---: |
+| ""  | ""  | "default"  |
+| 0   |  0  | "default"  |
+| null  | "default"  | "default"  |
+| undefined	|"default"	|	"default"|
 
 #### 74.
 
