@@ -867,7 +867,6 @@ navigator.connection // NetworkInformation {onchange: null, effectiveType: '3g'
 navigator.hid // Returns an HID object providing methods for connecting to HID devices, listing attached HID devices, and event handlers for connected HID devices.
 navigator.onLine // true or false based on the connection
 navigator.pdfViewerEnabled // return true if browser pdf viewer is enable
-
 ```
 
 #### 67. Get the latitude and longitude of the user's position with error handling
@@ -903,7 +902,7 @@ function showError(error) {
 }
 ```
 
-#### 68. Screen information of user
+#### 68. Screen information of the user
 
 ```js
 screen.width // 1366
@@ -914,7 +913,7 @@ screen.colorDepth // 24
 screen.pixelDepth // 24
 ```
 
-#### 69. Copy text from a input box
+#### 69. Copy text from an input box
 ```html
 <input type="text" name="" id="copyBox">
 <input type="submit" value="Submit" onclick="copy();">
@@ -949,11 +948,12 @@ console.log(getNumObj.next().value); // 1
 console.log(getNumObj.next().value); // 2
 ```
 
-#### 71.
+#### 71. Style the console output
 
 ```js
-
+console.log("%cHello, %cWassup dude?", "color: purple", "color: green");
 ```
+<p><img src='./assets/images/style-console.png' /></p>
 
 #### 72.
 
